@@ -101,6 +101,8 @@ const jsonData = {
       "imagem": "./img/image.png",
       "historia": "Capaz de ganhar terreno sobre os Sobreviventes em poucos instantes, a eficiência letal do The Blight nunca deve ser subestimada. Com a capacidade de ricochetear em superfícies e realinhar sua trajetória, sua presença implacável força os Sobreviventes a tomarem decisões precipitadas. A curva de aprendizado pode parecer íngreme, mas dominar The Blight vale a pena."
     }
+    
+    
   ]
 }
 
@@ -150,6 +152,22 @@ function criarAssassinos() {
   
 
 }
+// Função para buscar assassinos
+function buscarAssassino() {
+  const input = document.getElementById('search-input').value.toLowerCase();
+  const assassinoCards = document.querySelectorAll('.assassino-card');
+
+  assassinoCards.forEach(card => {
+      const nome = card.querySelector('h3').textContent.toLowerCase();
+      
+      if (nome.includes(input)) {
+          card.style.display = 'block'; // Exibe o card se corresponder à busca
+      } else {
+          card.style.display = 'none';  // Oculta o card se não corresponder à busca
+      }
+  });
+}
+
 
 // Chamar a função para criar os assassinos
 criarAssassinos();

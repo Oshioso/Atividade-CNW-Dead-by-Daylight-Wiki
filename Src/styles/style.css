@@ -59,12 +59,15 @@ img {
 }
 
 .assassino-card {
-    width: 250px;
-    border: 2px solid #ddd; /* Borda mais visível */
+    margin-top: 20px;
+    width: 240px;
+    border: 2px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
-    background-color: #222; /* Cor de fundo do cartão para contraste */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #222;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .assassino-card img {
@@ -74,14 +77,15 @@ img {
 
 .assassino-card h3 {
     margin: 10px;
-    font-size: 16px;
+    font-size: 18px; /* Aumenta o tamanho da fonte */
     text-align: center;
-    color: #fff; /* Cor da fonte ajustada para contraste */
+    color: #fff;
 }
 .assassino-historia {
     margin: 10px;
-    font-size: 14px;
-    color: #bbb; /* Cor da fonte ajustada para contraste */
+    font-size: 15px; /* Aumenta o tamanho da fonte */
+    line-height: 1.5; /* Melhora o espaçamento entre linhas */
+    color: #bbb;
 }
 .welcome-screen {
     display: flex;
@@ -116,5 +120,47 @@ img {
 #enter-button:hover {
     background-color: #d40812;
 }
+.assassino-card:hover {
+    transform: scale(1.05);
+    border-color: #E50914;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Aumenta a sombra suavemente */
+}
+
+#search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 20px;
+    color: #fff;
+    background-color: #222;
+}
+
+#search-input::placeholder {
+    color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+    .assassinos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .assassino-card {
+        width: 90%; /* Torna as cartas mais largas em telas pequenas */
+    }
+
+    .cat {
+        font-size: 1rem;
+    }
+
+    #enter-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+
+
 
 
