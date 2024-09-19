@@ -25,7 +25,7 @@ const jsonData = {
       "historia": "Um homem mais terrível de se ver. Seu físico está todo distorcido e desfigurado por causa de algum acidente terrível. Ele carrega uma motosserra mortal e cruel que empunha com violência devastadora, aparentemente imbuindo-o de uma velocidade sobre-humana por um tempo. Sua vantagem também é uma fraqueza, pois o barulho alto pode revelar sua posição. Então, tentei aumentar meu senso de som. Aprimorando qualquer som que não seja proveniente da natureza."
     },
     {
-      "nome": "Nuerse",
+      "nome": "Nurse",
       "habilidade": "Piscar",
       "descricao": "A Enfermeira pode piscar através de obstáculos para se teletransportar por curtas distâncias e atingir sobreviventes.",
       "imagem": "./img/nurse.png",
