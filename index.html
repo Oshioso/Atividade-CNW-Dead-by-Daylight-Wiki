@@ -6,8 +6,10 @@
     <title>Dead by Daylight - Assassinos</title>
     <link rel="stylesheet" href="./Src/styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -15,15 +17,16 @@
             <img src="./img/Dead-by-Daylight-Emblem.png" alt="Logo">
         </section>
 
+        <section class="header_section_center">
+            <p id="assassinos-title" class="assassinos-title">Assassinos</p>
+            <input type="text" id="search-input" placeholder="Buscar assassino..." oninput="buscarAssassino()" style="display: none;">
+        </section>
+
         <section class="header_section_right">
-            <div class="cat">
-                <p>Assassinos</p>
-                <input type="text" id="search-input" placeholder="Buscar assassino..." oninput="buscarAssassino()">
-            </div>
+            <button id="back-button" style="display: none;">Voltar</button>
         </section>
     </header>
 
-    <!-- Tela de boas-vindas -->
     <div id="welcome-screen" class="welcome-screen">
         <h1>Bem-vindo ao Dead by Daylight</h1>
         <p>Descubra os assassinos mais aterrorizantes</p>
@@ -39,6 +42,5 @@
     </main>
 
     <script src="./Src/script/app.js"></script>
-    
 </body>
 </html>

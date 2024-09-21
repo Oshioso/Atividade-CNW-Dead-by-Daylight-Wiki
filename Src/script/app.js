@@ -107,51 +107,35 @@ const jsonData = {
 }
 
 
-// Função para criar a estrutura HTML dos assassinos
 function criarAssassinos() {
   const container = document.getElementById('assassinos-container');
 
   jsonData.assassinos.forEach(assassino => {
-    // Criar elemento de card do assassino
     const card = document.createElement('div');
     card.className = 'assassino-card';
-    
-    // Adicionar imagem
+
     const img = document.createElement('img');
     img.src = assassino.imagem;
     img.alt = assassino.nome;
     card.appendChild(img);
-    
-    // Adicionar nome
+
     const h3 = document.createElement('h3');
     h3.textContent = assassino.nome;
     card.appendChild(h3);
-    
-    // Adicionar descrição
+
     const p = document.createElement('p');
     p.textContent = assassino.descricao;
     card.appendChild(p);
 
-    // Adicionar história
     const pHistoria = document.createElement('p');
     pHistoria.textContent = assassino.historia;
     pHistoria.className = 'assassino-historia';
     card.appendChild(pHistoria);
 
-    // Adicionar card ao container
     container.appendChild(card);
-    
-    document.getElementById('enter-button').addEventListener('click', () => {
-    // Oculta a tela de boas-vindas
-    document.getElementById('welcome-screen').style.display = 'none';
-    
-    // Exibe o conteúdo principal
-    document.getElementById('main-content').style.display = 'block';
-    })
   });
-  
-
 }
+
 // Função para buscar assassinos
 function buscarAssassino() {
   const input = document.getElementById('search-input').value.toLowerCase();
@@ -159,16 +143,30 @@ function buscarAssassino() {
 
   assassinoCards.forEach(card => {
       const nome = card.querySelector('h3').textContent.toLowerCase();
-      
+
       if (nome.includes(input)) {
-          card.style.display = 'block'; // Exibe o card se corresponder à busca
+          card.style.display = 'block'; 
       } else {
-          card.style.display = 'none';  // Oculta o card se não corresponder à busca
+          card.style.display = 'none';  
       }
   });
 }
 
+document.getElementById('enter-button').addEventListener('click', function() {
+    document.getElementById('welcome-screen').style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
+    document.getElementById('assassinos-title').style.display = 'block'; // Mostrar título
+    document.getElementById('search-input').style.display = 'block'; // Mostrar barra de pesquisa
+    document.getElementById('back-button').style.display = 'block'; // Mostrar botão de voltar
+});
 
+// Ações do botão "Voltar"
+document.getElementById('back-button').addEventListener('click', function() {
+    document.getElementById('main-content').style.display = 'none';
+    document.getElementById('welcome-screen').style.display = 'flex';
+    document.getElementById('assassinos-title').style.display = 'none'; // Esconder título
+    document.getElementById('search-input').style.display = 'none'; // Esconder barra de pesquisa
+    document.getElementById('back-button').style.display = 'none'; // Esconder botão de voltar
+});
 
-// Chamar a função para criar os assassinos
 criarAssassinos();
